@@ -26,6 +26,7 @@ namespace saveWatcher
                 System.Console.WriteLine(ex.Message);
                 filePath = @"./";
                 fileName = "AUTOSAVE.CGM";
+                fileType = "CGM";
             }
 
             if(args.Length == 3)
