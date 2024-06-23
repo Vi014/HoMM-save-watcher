@@ -69,13 +69,13 @@ namespace saveWatcher
                 {
                     lastRead = now;
                     
-                    String date = $"{month}{week}{day}.{fileType}";
-                    System.Console.WriteLine(date);
+                    String newSaveName = $"{month}{week}{day}.{fileType}";
+                    System.Console.WriteLine(newSaveName);
 
                     try
                     {
                         Thread.Sleep(500);
-                        File.Copy(filePath+fileName, filePath+date+"."+fileType, true);
+                        File.Copy(filePath+fileName, filePath+newSaveName, true);
                     }
                     catch (Exception ex)
                     {
