@@ -5,11 +5,14 @@ using System.Threading;
 
 namespace saveWatcher
 {
-    /* TODO: 
+    /* 
+        TODO: 
         - implement case insensitive checks
         - simplify initializations in ChangeConfig()
         - try-catch for opening save file and its directory
         - main operating block refactor
+        - remove unnecessary using blocks
+        - rename project
     */
     class SaveWatcher
     {
