@@ -7,7 +7,6 @@ namespace saveWatcher
 {
     /* TODO: 
         - implement case insensitive checks
-        - add moduo to command line arguments
         - simplify initializations in ChangeConfig()
         - try-catch for opening save file and its directory
         - main operating block refactor
@@ -71,8 +70,8 @@ namespace saveWatcher
                 try
                 {
                     month = Convert.ToInt32(args[0]);
-                    week  = Convert.ToInt32(args[1]);
-                    day   = Convert.ToInt32(args[2]);
+                    week  = Math.Min(Convert.ToInt32(args[1]), 4);
+                    day   = Math.Min(Convert.ToInt32(args[2]), 7);
                 }
                 catch (Exception ex)
                 {
@@ -156,6 +155,8 @@ namespace saveWatcher
                     catch (Exception ex)
                     {
                         Console.Write("Error while writing to file! Try again? [Y/n/i]: ");
+                        String asdf = (Console.ReadLine() ?? "Y").Trim();
+                        System.Console.WriteLine(asdf);
                         char c = (Console.ReadLine() ?? "Y").Trim()[0];
                         if(c == 'n') saveSuccess = true;
                         else if (c == 'i') Console.WriteLine(ex.Data);
